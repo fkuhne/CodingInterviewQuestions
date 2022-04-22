@@ -1,8 +1,6 @@
 # https://app.codility.com/programmers/trainings/7/tree_longest_zig_zag/
 # Compute the number of zigzags in a tree
 
-
-
 class tree:
   def __init__(self, data=-1, l=None, r=None):
     self.data = data
