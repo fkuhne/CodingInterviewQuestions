@@ -51,7 +51,6 @@
 # Output:
 #     60
 
-
 def split_neg_pos(vs):
     negs = []
     poss = []
@@ -59,34 +58,24 @@ def split_neg_pos(vs):
         if v < 0: negs.append(v)
         elif v > 0: poss.append(v)
     return negs, len(negs), poss, len(poss)
-
+    
 def solution(xs):
-
-    print("\nxs = {}".format(xs))
     negs, lennegs, poss, lenposs = split_neg_pos(xs)
 
     if lenposs == 0:
         if lennegs == 0: return str(0)
         if lennegs == 1: return str(negs[0])
-    # if lenposs > 0 and lennegs == 1: negs = []
-    
-    if lennegs % 2 != 0: 
+
+    if lennegs % 2 == 1: 
         negs = sorted(negs)
         negs.pop()
-        lennegs -= 1
-
-    print("the resulting neg vector is {}, len = {}".format(negs, len(negs)))
-    print("the resulting pos vector is {}, len = {}".format(poss, len(poss)))
-
-    # if len(negs) == 0 and len(poss) == 0: return "0"
-    # if len(negs) == 0: negs = [1]
-    # if len(poss) == 0: poss = [1]
 
     result = 1
-    for v in negs + poss:
-        result = result*v
+    for v in poss + negs:
+        result *= v
 
     return str(result)
+    
     
 
 print(solution([-3,0,0,0,1,1,1]))
