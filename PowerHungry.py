@@ -51,6 +51,7 @@
 # Output:
 #     60
 
+# This code is as I submitted to Google. It passes all tests but 5th. :(
 def split_neg_pos(vs):
     negs = []
     poss = []
